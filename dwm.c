@@ -1510,7 +1510,13 @@ setfullscreen(Client *c, int fullscreen)
 		c->oldbw = c->bw;
 		c->bw = 0;
 		c->isfloating = 1;
-		resizeclient(c, c->mon->mx, c->mon->my, c->mon->mw, c->mon->mh);
+		if(fullscreen == 1){
+			resizeclient(c, c->mon->mx, c->mon->my, c->mon->mw, c->mon->mh);
+		}else{
+			/* if just wanted to maximize */
+			resizeclient(selmon->sel, selmon->sel->mon->mx, selmon->sel->mon->my + bh,
+					selmon->sel->mon->mw, selmon->sel->mon->mh - bh);
+		}
 		XRaiseWindow(dpy, c->win);
 	} else if (!fullscreen && c->isfullscreen){
 		XChangeProperty(dpy, c->win, netatom[NetWMState], XA_ATOM, 32,
