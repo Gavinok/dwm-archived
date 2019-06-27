@@ -54,7 +54,10 @@ static const Layout layouts[] = {
 	{ "TTT",      bstack },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
+	{ NULL,       NULL },
 };
+
+#include "cyclelayout.c"
 
 /* key definitions */
 #define MODKEY Mod1Mask
