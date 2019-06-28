@@ -48,6 +48,7 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 #include "zoomswap.c"
 #include "scratchpad.c"
 #include "maximize.c"
+#include "moveplace.c"
 #include "mv.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -98,7 +99,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,      max,      {.i = 0} },
+	{ MODKEY,                       XK_f,      max,		   {.i = 0} },
+	{ MODKEY,			XK_g,      moveplace,      {.ui = WIN_C  }},
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
