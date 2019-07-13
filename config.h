@@ -66,13 +66,14 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class  instance  title  tags mask isfloating monitor */
-	{ NULL, NULL,    "newspod",    	1<<3, 0, -1 },
-	{ NULL, "mp3",   NULL,         	1<<3, 1, -1 },
-	{ NULL, NULL,    "launch_once",	0,    1, -1 },
-	{ NULL, NULL,    "fuzzpass",	0,    1, -1 },
-	{ NULL, "popup", NULL,         	0,    1, -1 },
-	{ NULL, "float", NULL,         	0,    0, -1 },
-	{ NULL, NULL,    "float",      	0,    0, -1 },
+	{ NULL, NULL,      "newspod",     1<<3, 0, -1 },
+	{ NULL, "mp3",     NULL,          1<<3, 1, -1 },
+	{ NULL, NULL,      "launch_once", 0,    1, -1 },
+	{ NULL, NULL,      "fuzzpass",    0,    1, -1 },
+	{ NULL, "popup",   NULL,          0,    1, -1 },
+	{ NULL, "float",   NULL,          0,    1, -1 },
+	{ NULL, NULL,      "float",       0,    1, -1 },
+	{ NULL, "lazarus", NULL,          1<<2,    1, -1 },
 };
 
 /* layout(s) */
@@ -89,6 +90,7 @@ static const Layout layouts[] = {
 	{ "[]=",      tile },    /* first entry is default */
 	{ "TTT",      bstack },    /* first entry is default */
 	{ NULL,      NULL },    /* no layout function means floating behavior */
+	{ "><>",      NULL },    /* no layout function means floating behavior */
 };
 
 #include "cyclelayout.c"
@@ -110,7 +112,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "90x24", NULL };
+static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-n", "float", "-g", "90x24", NULL };
 static const char *calc[]          = { "st", "-t", scratchpadname, "-e", "bc", NULL };
 static const char term[]           = { "st"};
 static const char exec[]           = { "-e" };
@@ -130,7 +132,7 @@ static const char *mplay[]         = { "lmc", "toggle", NULL };
 static const char *mnext[]         = { "lmc", "next", NULL };
 static const char *mprev[]         = { "lmc", "prev", NULL };
 static const char *search[]        = { "ducksearch", NULL };
-static const char *browser[]       = { "/bin/sh", "-c", "ducksearch \"google-chrome-stable -app=\"", NULL };
+static const char *browser[]       = { "/bin/sh", "-c", "ducksearch \"firefox \"", NULL };
 static const char *clip[]          = { "clipmenu", NULL };
 static const char *plumb[]         = { "cabl", "-c", NULL };
 static const char *killit[]        = { "dmenu-killall", NULL };
@@ -148,6 +150,8 @@ static const char *kdeconnect[]    = { "dmenu_kdeconnect.sh", NULL };
 static const char *pass[]	   = { "mypassmenu", "--type", "-p", "Select Password", "-l", "5", NULL };
 static const char *barmenu[]	   = { "bar", NULL };
 static const char *vimclip[]	   = { "vim-anywhere.sh", "-c", NULL };
+static const char *hide[]	   = { "hide.sh", NULL };
+static const char *unhide[]	   = { "unhide.sh", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -190,9 +194,9 @@ static Key keys[] = {
 	{ MODKEY,                                     XK_o,         spawn,          {.v = vimclip } },
 	{ MODKEY,                                     XK_p,         spawn,          {.v = clip } },
 	{ MODKEY|ShiftMask,                           XK_p,         spawn,          {.v = plumb } },
-	// { MODKEY,              XK_bracketleft,  setlayout,          {.v = &layouts[4] } },
-	// { MODKEY,              XK_bracketright, spawn,          {.v = } },
-	{ MODKEY,                                     XK_backslash, spawn,          {.v = kdeconnect } },
+	{ MODKEY,				    XK_bracketleft, spawn,          {.v = hide } },
+	{ MODKEY,				    XK_bracketright,spawn,          {.v = unhide} },
+	{ MODKEY,                                   XK_backslash,   spawn,          {.v = kdeconnect } },
 	{ MODKEY,                                     XK_a,         incnmaster,     {.i = +1 } },
 	{ MODKEY|ControlMask,                         XK_a,         spawn,          {.v = vdown } },
 	{ MODKEY,                                     XK_s,         incnmaster,     {.i = -1 } },
@@ -201,7 +205,7 @@ static Key keys[] = {
 	{ MODKEY,                                     XK_d,         spawn,          {.v = dmenucmd } },
 	{ MODKEY|ControlMask,                         XK_d,         spawn,          {.v = lup } },
 	{ MODKEY,                                     XK_f,         max,            {.i = 0} },
-	{ MODKEY|ShiftMask,                           XK_f,         setlayout,      {.v = &layouts[4] } },
+	{ MODKEY|ShiftMask,			      XK_f,         setlayout,      {.v = &layouts[3] } },
 	{ MODKEY|ControlMask,                         XK_f,         spawn,          {.v = vup } },
 	{ MODKEY,                                     XK_g,         moveplace,      {.ui = WIN_C  }},
 	{ MODKEY|ControlMask,                         XK_h,         setmfact,       {.f = -0.05} },
@@ -217,7 +221,8 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,                         XK_l,         setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,                           XK_l,         mv,             {.i = -1} },
 	{ MODKEY,                                     XK_semicolon, view,           {0} },
-	// { MODKEY,              XK_apostrophe,   toggleNoKill,   {0} },
+	// { MODKEY,				      XK_apostrophe,   spawn,   {.v = hide} },
+	// { MODKEY|ShiftMask,			      XK_apostrophe,   spawn,   {.v = unhide} },
 	{ MODKEY,                                     XK_Return,    spawn,          {.v = termcmd } },
 
 	{ MODKEY|ShiftMask,                           XK_z,         togglefloating, {0} },
