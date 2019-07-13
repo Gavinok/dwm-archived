@@ -131,7 +131,7 @@ static const char *mplay[]         = { "lmc", "toggle", NULL };
 static const char *mnext[]         = { "lmc", "next", NULL };
 static const char *mprev[]         = { "lmc", "prev", NULL };
 static const char *search[]        = { "ducksearch", NULL };
-static const char *browser[]       = { "/bin/sh", "-c", "ducksearch \"google-chrome-stable -app=\"", NULL };
+static const char *browser[]       = { "/bin/sh", "-c", "ducksearch \"firefox \"", NULL };
 static const char *clip[]          = { "clipmenu", NULL };
 static const char *plumb[]         = { "cabl", "-c", NULL };
 static const char *killit[]        = { "dmenu-killall", NULL };
@@ -149,6 +149,8 @@ static const char *kdeconnect[]    = { "dmenu_kdeconnect.sh", NULL };
 static const char *pass[]	   = { "mypassmenu", "--type", "-p", "Select Password", "-l", "5", NULL };
 static const char *barmenu[]	   = { "bar", NULL };
 static const char *vimclip[]	   = { "vim-anywhere.sh", "-c", NULL };
+static const char *hide[]	   = { "hide.sh", NULL };
+static const char *unhide[]	   = { "unhide.sh", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
