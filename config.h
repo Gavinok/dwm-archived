@@ -66,13 +66,14 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class  instance  title  tags mask isfloating monitor */
-	{ NULL, NULL,    "newspod",    	1<<3, 0, -1 },
-	{ NULL, "mp3",   NULL,         	1<<3, 1, -1 },
-	{ NULL, NULL,    "launch_once",	0,    1, -1 },
-	{ NULL, NULL,    "fuzzpass",	0,    1, -1 },
-	{ NULL, "popup", NULL,         	0,    1, -1 },
-	{ NULL, "float", NULL,         	0,    0, -1 },
-	{ NULL, NULL,    "float",      	0,    0, -1 },
+	{ NULL, NULL,      "newspod",     1<<3, 0, -1 },
+	{ NULL, "mp3",     NULL,          1<<3, 1, -1 },
+	{ NULL, NULL,      "launch_once", 0,    1, -1 },
+	{ NULL, NULL,      "fuzzpass",    0,    1, -1 },
+	{ NULL, "popup",   NULL,          0,    1, -1 },
+	{ NULL, "float",   NULL,          0,    1, -1 },
+	{ NULL, NULL,      "float",       0,    1, -1 },
+	{ NULL, "lazarus", NULL,          1<<2,    1, -1 },
 };
 
 /* layout(s) */
@@ -220,7 +221,8 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,                         XK_l,         setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,                           XK_l,         mv,             {.i = -1} },
 	{ MODKEY,                                     XK_semicolon, view,           {0} },
-	// { MODKEY,              XK_apostrophe,   toggleNoKill,   {0} },
+	// { MODKEY,				      XK_apostrophe,   spawn,   {.v = hide} },
+	// { MODKEY|ShiftMask,			      XK_apostrophe,   spawn,   {.v = unhide} },
 	{ MODKEY,                                     XK_Return,    spawn,          {.v = termcmd } },
 
 	{ MODKEY|ShiftMask,                           XK_z,         togglefloating, {0} },
