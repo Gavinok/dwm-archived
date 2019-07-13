@@ -89,6 +89,7 @@ static const Layout layouts[] = {
 	{ "[]=",      tile },    /* first entry is default */
 	{ "TTT",      bstack },    /* first entry is default */
 	{ NULL,      NULL },    /* no layout function means floating behavior */
+	{ "><>",      NULL },    /* no layout function means floating behavior */
 };
 
 #include "cyclelayout.c"
