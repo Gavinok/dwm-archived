@@ -174,7 +174,7 @@ static Key keys[] = {
 	{ MODKEY,				      XK_BackSpace, killclient,     {0} },
 
 	{ MODKEY,                                     XK_Tab,       cyclelayout,    {.i = +1} },
-	{ MODKEY|ShiftMask,                           XK_Tab,       cyclelayout,    {.i = -1} },
+	// { MODKEY|ShiftMask,                           XK_Tab,       cyclelayout,    {.i = -1} },
 	{ MODKEY,                                     XK_q,         killclient,     {0} },
 	{ AltMask|ControlMask,                        XK_q,         spawn,          {.v = killit } },
 	// { MODKEY|ShiftMask,    XK_q,            forcekill,      {0} },
