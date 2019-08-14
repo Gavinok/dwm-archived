@@ -1,55 +1,20 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int gappx     = 15;        /* gaps between windows */
+static const unsigned int gappx     = 15; /* gaps between windows */
 static const unsigned int deltamv   = 20; /* deltamvmv = the amount of pixels each movement will be by */
-static const unsigned int snap      = 32;       /* snap pixel */
-static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
+static const unsigned int snap      = 32; /* snap pixel */
+static const int showbar            = 1;  /* 0 means no bar */
+static const int topbar             = 1;  /* 0 means bottom bar */
 static const char *fonts[]          = { "DejaVu Sans Mono:style=Regular:size=10" };
 static const char dmenufont[]       = "DejaVu Sans Mono:style=Regular:size=10";
 
-static const char background[] = "#131313";
-static const char foreground[] = "#B7BBB7";
-                                     
-                                     
-static const char black1[]     = "#151515";
-static const char black2[]     = "#636363";
-                                     
-                                     
-static const char red1[]       = "#fb9fb1";
-static const char red2[]       = "#BF6262";
-                                     
-                                     
-static const char green1[]     = "#acc267";
-static const char green2[]     = "#acc267";
-                                     
-                                     
-static const char yellow1[]    = "#ddb26f";
-static const char yellow2[]    = "#E2995C";
-                                     
-                                     
-static const char blue1[]      = "#7D8FA3";
-static const char blue2[]      = "#66899D";
-                                     
-                                     
-static const char magenta1[]   = "#9F7AA5";
-static const char magenta2[]   = "#ff99ff";
-                                     
-                                     
-static const char cyan1[]      = "#53cdbd";
-static const char cyan2[]      = "#638E8A";
-                                     
-                                     
-static const char white1[]     = "#d9d0d0";
-static const char white2[]     = "#E3E8E3";
-static const unsigned int baralpha = 229;
-static const unsigned int borderalpha = OPAQUE;
+#include "../colorschemes/dwm/current.c"
+
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] =	  { black2, background, background },
-	[SchemeSel]  =	  { blue1, background,  background },
+	[SchemeNorm] =	  { UNSELECTED, background, foreground },
+	[SchemeSel]  =	  { SELECTED, background,  black1 }
 };
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
@@ -132,7 +97,7 @@ static const char *mplay[]         = { "lmc", "toggle", NULL };
 static const char *mnext[]         = { "lmc", "next", NULL };
 static const char *mprev[]         = { "lmc", "prev", NULL };
 static const char *search[]        = { "ducksearch", NULL };
-static const char *browser[]       = { "/bin/sh", "-c", "ducksearch \"firefox \"", NULL };
+static const char *browser[]       = { "/bin/sh", "-c", "ducksearch \"google-chrome-stable \"", NULL };
 static const char *clip[]          = { "clipmenu", NULL };
 static const char *plumb[]         = { "cabl", "-c", NULL };
 static const char *killit[]        = { "dmenu-killall", NULL };
