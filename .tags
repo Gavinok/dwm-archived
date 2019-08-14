@@ -138,25 +138,17 @@ arrange	dwm.c	/^arrange(Monitor *m)$/;"	f	typeref:typename:void
 arrangemon	dwm.c	/^arrangemon(Monitor *m)$/;"	f	typeref:typename:void
 attach	dwm.c	/^attach(Client *c)$/;"	f	typeref:typename:void
 attachstack	dwm.c	/^attachstack(Client *c)$/;"	f	typeref:typename:void
-background	config.h	/^static const char background[] = "#131313";$/;"	v	typeref:typename:const char[]
 baralpha	config.def.h	/^static const unsigned int baralpha = 0xd0;$/;"	v	typeref:typename:const unsigned int
-baralpha	config.h	/^static const unsigned int baralpha = 229;$/;"	v	typeref:typename:const unsigned int
 barmenu	config.h	/^static const char *barmenu[]	   = { "bar", NULL };$/;"	v	typeref:typename:const char * []
 barwin	dwm.c	/^	Window barwin;$/;"	m	struct:Monitor	typeref:typename:Window	file:
 baseh	dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	struct:Client	typeref:typename:int	file:
 basew	dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	struct:Client	typeref:typename:int	file:
 bh	dwm.c	/^static int bh, blw = 0;      \/* bar geometry *\/$/;"	v	typeref:typename:int	file:
-black1	config.h	/^static const char black1[]     = "#151515";$/;"	v	typeref:typename:const char[]
-black2	config.h	/^static const char black2[]     = "#636363";$/;"	v	typeref:typename:const char[]
-blue1	config.h	/^static const char blue1[]      = "#7D8FA3";$/;"	v	typeref:typename:const char[]
-blue2	config.h	/^static const char blue2[]      = "#66899D";$/;"	v	typeref:typename:const char[]
 blw	dwm.c	/^static int bh, blw = 0;      \/* bar geometry *\/$/;"	v	typeref:typename:int	file:
 borderalpha	config.def.h	/^static const unsigned int borderalpha = OPAQUE;$/;"	v	typeref:typename:const unsigned int
-borderalpha	config.h	/^static const unsigned int borderalpha = OPAQUE;$/;"	v	typeref:typename:const unsigned int
 borderpx	config.def.h	/^static const unsigned int borderpx  = 1;        \/* border pixel of windows *\/$/;"	v	typeref:typename:const unsigned int
-borderpx	config.h	/^static const unsigned int borderpx  = 1;        \/* border pixel of windows *\/$/;"	v	typeref:typename:const unsigned int
 broken	dwm.c	/^static const char broken[] = "broken";$/;"	v	typeref:typename:const char[]	file:
-browser	config.h	/^static const char *browser[]       = { "\/bin\/sh", "-c", "ducksearch \\"firefox \\"", NULL };$/;"	v	typeref:typename:const char * []
+browser	config.h	/^static const char *browser[]       = { "\/bin\/sh", "-c", "ducksearch \\"google-chrome-stable \\/;"	v	typeref:typename:const char * []
 bstack	layouts.c	/^bstack(Monitor *m)$/;"	f	typeref:typename:void
 button	dwm.c	/^	unsigned int button;$/;"	m	struct:__anon0f53a99e0708	typeref:typename:unsigned int	file:
 buttonpress	dwm.c	/^buttonpress(XEvent *e)$/;"	f	typeref:typename:void
@@ -190,8 +182,6 @@ configurerequest	dwm.c	/^configurerequest(XEvent *e)$/;"	f	typeref:typename:void
 createmon	dwm.c	/^createmon(void)$/;"	f	typeref:typename:Monitor *
 cursor	drw.h	/^	Cursor cursor;$/;"	m	struct:__anon0f5116480108	typeref:typename:Cursor
 cursor	dwm.c	/^static Cur *cursor[CurLast];$/;"	v	typeref:typename:Cur * []	file:
-cyan1	config.h	/^static const char cyan1[]      = "#53cdbd";$/;"	v	typeref:typename:const char[]
-cyan2	config.h	/^static const char cyan2[]      = "#638E8A";$/;"	v	typeref:typename:const char[]
 cyclelayout	cyclelayout.c	/^cyclelayout(const Arg *arg) {$/;"	f	typeref:typename:void
 deltamv	config.def.h	/^static const unsigned int deltamv   = 20; \/* deltamvmv = the amount of pixels each movement wil/;"	v	typeref:typename:const unsigned int
 deltamv	config.h	/^static const unsigned int deltamv   = 20; \/* deltamvmv = the amount of pixels each movement wil/;"	v	typeref:typename:const unsigned int
@@ -249,11 +239,10 @@ focusstack	dwm.c	/^focusstack(const Arg *arg)$/;"	f	typeref:typename:void
 fonts	config.def.h	/^static const char *fonts[]          = { "monospace:size=10" };$/;"	v	typeref:typename:const char * []
 fonts	config.h	/^static const char *fonts[]          = { "DejaVu Sans Mono:style=Regular:size=10" };$/;"	v	typeref:typename:const char * []
 fonts	drw.h	/^	Fnt *fonts;$/;"	m	struct:__anon0f5116480308	typeref:typename:Fnt *
-foreground	config.h	/^static const char foreground[] = "#B7BBB7";$/;"	v	typeref:typename:const char[]
 func	dwm.c	/^	void (*func)(const Arg *);$/;"	m	struct:__anon0f53a99e0808	typeref:typename:void (*)(const Arg *)	file:
 func	dwm.c	/^	void (*func)(const Arg *arg);$/;"	m	struct:__anon0f53a99e0708	typeref:typename:void (*)(const Arg * arg)	file:
 gappx	config.def.h	/^static const unsigned int gappx     = 5;        \/* gaps between windows *\/$/;"	v	typeref:typename:const unsigned int
-gappx	config.h	/^static const unsigned int gappx     = 15;        \/* gaps between windows *\/$/;"	v	typeref:typename:const unsigned int
+gappx	config.h	/^static const unsigned int gappx     = 15; \/* gaps between windows *\/$/;"	v	typeref:typename:const unsigned int
 gappx	dwm.c	/^	int gappx;            \/* gaps between windows *\/$/;"	m	struct:Monitor	typeref:typename:int	file:
 gc	drw.h	/^	GC gc;$/;"	m	struct:__anon0f5116480308	typeref:typename:GC
 getatomprop	dwm.c	/^getatomprop(Client *c, Atom prop)$/;"	f	typeref:typename:Atom
@@ -262,8 +251,6 @@ getstate	dwm.c	/^getstate(Window w)$/;"	f	typeref:typename:long
 gettextprop	dwm.c	/^gettextprop(Window w, Atom atom, char *text, unsigned int size)$/;"	f	typeref:typename:int
 grabbuttons	dwm.c	/^grabbuttons(Client *c, int focused)$/;"	f	typeref:typename:void
 grabkeys	dwm.c	/^grabkeys(void)$/;"	f	typeref:typename:void
-green1	config.h	/^static const char green1[]     = "#acc267";$/;"	v	typeref:typename:const char[]
-green2	config.h	/^static const char green2[]     = "#acc267";$/;"	v	typeref:typename:const char[]
 h	drw.h	/^	unsigned int h;$/;"	m	struct:Fnt	typeref:typename:unsigned int
 h	drw.h	/^	unsigned int w, h;$/;"	m	struct:__anon0f5116480308	typeref:typename:unsigned int
 h	dwm.c	/^	int x, y, w, h;$/;"	m	struct:Client	typeref:typename:int	file:
@@ -296,8 +283,6 @@ lrpad	dwm.c	/^static int lrpad;            \/* sum of left and right padding for
 lt	dwm.c	/^	const Layout *lt[2];$/;"	m	struct:Monitor	typeref:typename:const Layout * [2]	file:
 ltsymbol	dwm.c	/^	char ltsymbol[16];$/;"	m	struct:Monitor	typeref:typename:char[16]	file:
 lup	config.h	/^static const char *lup[]           = { "llc.sh", "up", "7", NULL };$/;"	v	typeref:typename:const char * []
-magenta1	config.h	/^static const char magenta1[]   = "#9F7AA5";$/;"	v	typeref:typename:const char[]
-magenta2	config.h	/^static const char magenta2[]   = "#ff99ff";$/;"	v	typeref:typename:const char[]
 main	dwm.c	/^main(int argc, char *argv[])$/;"	f	typeref:typename:int
 main	transient.c	/^int main(void) {$/;"	f	typeref:typename:int
 manage	dwm.c	/^manage(Window w, XWindowAttributes *wa)$/;"	f	typeref:typename:void
@@ -362,8 +347,6 @@ prevzoom	zoomswap.c	/^static Client *prevzoom = NULL;$/;"	v	typeref:typename:Cli
 propertynotify	dwm.c	/^propertynotify(XEvent *e)$/;"	f	typeref:typename:void
 quit	dwm.c	/^quit(const Arg *arg)$/;"	f	typeref:typename:void
 recttomon	dwm.c	/^recttomon(int x, int y, int w, int h)$/;"	f	typeref:typename:Monitor *
-red1	config.h	/^static const char red1[]       = "#fb9fb1";$/;"	v	typeref:typename:const char[]
-red2	config.h	/^static const char red2[]       = "#BF6262";$/;"	v	typeref:typename:const char[]
 reddit	config.h	/^static const char *reddit[]        = { term, exec, "rtv", NULL };$/;"	v	typeref:typename:const char * []
 resize	dwm.c	/^resize(Client *c, int x, int y, int w, int h, int interact)$/;"	f	typeref:typename:void
 resizeclient	dwm.c	/^resizeclient(Client *c, int x, int y, int w, int h)$/;"	f	typeref:typename:void
@@ -407,12 +390,12 @@ setup	dwm.c	/^setup(void)$/;"	f	typeref:typename:void
 seturgent	dwm.c	/^seturgent(Client *c, int urg)$/;"	f	typeref:typename:void
 sh	dwm.c	/^static int sw, sh;           \/* X display screen geometry width, height *\/$/;"	v	typeref:typename:int	file:
 showbar	config.def.h	/^static const int showbar            = 1;        \/* 0 means no bar *\/$/;"	v	typeref:typename:const int
-showbar	config.h	/^static const int showbar            = 1;        \/* 0 means no bar *\/$/;"	v	typeref:typename:const int
+showbar	config.h	/^static const int showbar            = 1;  \/* 0 means no bar *\/$/;"	v	typeref:typename:const int
 showbar	dwm.c	/^	int showbar;$/;"	m	struct:Monitor	typeref:typename:int	file:
 showhide	dwm.c	/^showhide(Client *c)$/;"	f	typeref:typename:void
 sigchld	dwm.c	/^sigchld(int unused)$/;"	f	typeref:typename:void
 snap	config.def.h	/^static const unsigned int snap      = 32;       \/* snap pixel *\/$/;"	v	typeref:typename:const unsigned int
-snap	config.h	/^static const unsigned int snap      = 32;       \/* snap pixel *\/$/;"	v	typeref:typename:const unsigned int
+snap	config.h	/^static const unsigned int snap      = 32; \/* snap pixel *\/$/;"	v	typeref:typename:const unsigned int
 snext	dwm.c	/^	Client *snext;$/;"	m	struct:Client	typeref:typename:Client *	file:
 spawn	dwm.c	/^spawn(const Arg *arg)$/;"	f	typeref:typename:void
 spell	config.h	/^static const char *spell[]         = { "spellcheck.sh", NULL };$/;"	v	typeref:typename:const char * []
@@ -442,7 +425,7 @@ togglescratch	scratchpad.c	/^togglescratch(const Arg *arg)$/;"	f	typeref:typenam
 toggletag	dwm.c	/^toggletag(const Arg *arg)$/;"	f	typeref:typename:void
 toggleview	dwm.c	/^toggleview(const Arg *arg)$/;"	f	typeref:typename:void
 topbar	config.def.h	/^static const int topbar             = 1;        \/* 0 means bottom bar *\/$/;"	v	typeref:typename:const int
-topbar	config.h	/^static const int topbar             = 1;        \/* 0 means bottom bar *\/$/;"	v	typeref:typename:const int
+topbar	config.h	/^static const int topbar             = 1;  \/* 0 means bottom bar *\/$/;"	v	typeref:typename:const int
 topbar	dwm.c	/^	int topbar;$/;"	m	struct:Monitor	typeref:typename:int	file:
 tutoral	config.h	/^static const char *tutoral[]       = { "tutorialvids", NULL };$/;"	v	typeref:typename:const char * []
 ui	dwm.c	/^	unsigned int ui;$/;"	m	union:__anon0f53a99e060a	typeref:typename:unsigned int	file:
@@ -481,8 +464,6 @@ w	drw.h	/^	unsigned int w, h;$/;"	m	struct:__anon0f5116480308	typeref:typename:u
 w	dwm.c	/^	int x, y, w, h;$/;"	m	struct:Client	typeref:typename:int	file:
 warp	dwm.c	/^warp(const Client *c)$/;"	f	typeref:typename:void
 wh	dwm.c	/^	int wx, wy, ww, wh;   \/* window area  *\/$/;"	m	struct:Monitor	typeref:typename:int	file:
-white1	config.h	/^static const char white1[]     = "#d9d0d0";$/;"	v	typeref:typename:const char[]
-white2	config.h	/^static const char white2[]     = "#E3E8E3";$/;"	v	typeref:typename:const char[]
 win	dwm.c	/^	Window win;$/;"	m	struct:Client	typeref:typename:Window	file:
 wintoclient	dwm.c	/^wintoclient(Window w)$/;"	f	typeref:typename:Client *
 wintomon	dwm.c	/^wintomon(Window w)$/;"	f	typeref:typename:Monitor *
@@ -501,7 +482,5 @@ xfont_create	drw.c	/^xfont_create(Drw *drw, const char *fontname, FcPattern *fon
 xfont_free	drw.c	/^xfont_free(Fnt *font)$/;"	f	typeref:typename:void	file:
 xinitvisual	dwm.c	/^xinitvisual()$/;"	f	typeref:typename:void
 y	dwm.c	/^	int x, y, w, h;$/;"	m	struct:Client	typeref:typename:int	file:
-yellow1	config.h	/^static const char yellow1[]    = "#ddb26f";$/;"	v	typeref:typename:const char[]
-yellow2	config.h	/^static const char yellow2[]    = "#E2995C";$/;"	v	typeref:typename:const char[]
 zoom	dwm.c	/^zoom(const Arg *arg)$/;"	f	typeref:typename:void
 zoomswap	zoomswap.c	/^zoomswap(const Arg *arg)$/;"	f	typeref:typename:void

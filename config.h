@@ -114,6 +114,7 @@ static const char *rotate[]        = { "rotate_screen", NULL };
 static const char *kdeconnect[]    = { "dmenu_kdeconnect.sh", NULL };
 static const char *pass[]	   = { "mypassmenu", "--type", "-p", "Select Password", "-l", "5", NULL };
 static const char *barmenu[]	   = { "bar", NULL };
+// static const char *rclickmenu[]	   = { "jgmenu", "--at-pointer", NULL };
 static const char *vimclip[]	   = { "vim-anywhere.sh", "-c", NULL };
 static const char *hide[]	   = { "hide.sh", NULL };
 static const char *unhide[]	   = { "unhide.sh", NULL };
