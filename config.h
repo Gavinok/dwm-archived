@@ -236,7 +236,7 @@ static Button buttons[] = {
 	{ ClkLtSymbol,		0,              Button5,        spawn,		{.v = ldown} },
 	{ ClkWinTitle,          0,              Button1,        max,		{0} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkWinTitle,          0,              Button3,        killclient,      {0} },
+	{ ClkWinTitle,          0,              Button3,        killclient,     {0} },
 	{ ClkWinTitle,          0,              Button4,        focusstack,     {.i = -1} },
 	{ ClkWinTitle,          0,              Button5,        focusstack,     {.i = +1} },
 	{ ClkStatusText,        0,              Button1,        tagmon,         {.i = +1 } },
@@ -250,4 +250,5 @@ static Button buttons[] = {
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+	{ ClkRootWin,           0,		Button3,        spawn,		{.v = barmenu } },
 };
