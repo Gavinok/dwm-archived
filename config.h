@@ -9,7 +9,7 @@ static const int topbar             = 1;  /* 0 means bottom bar */
 static const char *fonts[]          = { "DejaVu Sans Mono:style=Regular:size=10" };
 static const char dmenufont[]       = "DejaVu Sans Mono:style=Regular:size=10";
 
-#include "../colorschemes/dwm/current.c"
+#include "../colorschemes/dwm/current.h"
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -18,7 +18,7 @@ static const char *colors[][3]      = {
 };
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
-	[SchemeNorm] = { OPAQUE, baralpha, borderalpha },
+	[SchemeNorm] = { OPAQUE, baralpha, 0 },
 	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
 };
 
