@@ -78,7 +78,7 @@ static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-n", "float", "-g", "90x24", NULL };
-static const char *calc[]          = { "st", "-t", scratchpadname, "-e", "bc", NULL };
+static const char *calc[]          = { "st", "-t", scratchpadname, "-e", "python", NULL };
 static const char term[]           = { "st"};
 static const char exec[]           = { "-e" };
 static const char *email[]         = { term, "-t", "neomutt", exec, "launch_once.sh", "neomutt", NULL };
@@ -213,7 +213,8 @@ static Key keys[] = {
 	{ MODKEY,                                     XK_F8,        spawn,          {.v = undock } },
 	{ MODKEY,                                     XK_F11,       spawn,          {.v = nm } },
 	{ 0,                                          XK_Print,     spawn,          {.v = screenshot }},
-	{ 0,                                          0x1008ff41,   spawn,          SHCMD("xset dpms force off")},
+	// { 0,                                          0x1008ff41,   spawn,          SHCMD("xset dpms force off")},
+	{ 0,                                          0x1008ff41,   spawn,          SHCMD("systemctl suspend")},
 	{ 0,                                          0x1008ff11,   spawn,          {.v = vdown } },
 	{ 0,                                          0x1008ff13,   spawn,          {.v = vup } },
 	{ 0,                                          0x1008ff12,   spawn,          {.v = mute } },
