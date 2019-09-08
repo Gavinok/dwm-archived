@@ -44,6 +44,8 @@
 #include "drw.h"
 #include "util.h"
 
+#define CENTERWINDOWNAME
+
 /* macros */
 #define BUTTONMASK              (ButtonPressMask|ButtonReleaseMask)
 #define CLEANMASK(mask)         (mask & ~(numlockmask|LockMask) & (ShiftMask|ControlMask|Mod1Mask|Mod2Mask|Mod3Mask|Mod4Mask|Mod5Mask))
@@ -743,7 +745,15 @@ drawbar(Monitor *m)
 	if ((w = m->ww - sw - x) > bh) {
 		if (m->sel) {
 			drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
+#ifdef CENTERWINDOWNAME
+
+			int mid = (m->ww - TEXTW(m->sel->name)) / 2 - x;
+			/* make sure name will not overlap on tags even when it is very long */
+			mid = mid >= lrpad / 2 ? mid : lrpad / 2;
+			drw_text(drw, x, 0, w, bh, mid, m->sel->name, 0);
+#else
 			drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
+#endif 
 			if (m->sel->isfloating)
 				drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
 		} else {
