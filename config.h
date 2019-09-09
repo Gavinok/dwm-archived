@@ -86,7 +86,7 @@ static const char *mixer[]         = { term, exec, "launch_once.sh", "pulsemixer
 static const char *reddit[]        = { term, exec, "rtv", NULL };
 static const char *rss[]           = { term, exec, "newspod", NULL };
 static const char *sysmonitor2[]   = { term, exec, "htop", NULL };
-static const char *sysmonitor[]    = { term, exec, "gotop", "-m", "-c", "vice", NULL };
+static const char *sysmonitor[]    = { term, exec, "gotop", "-m", NULL };
 static const char *nm[]            = { "dmenu_connection_manager.sh", NULL };
 static const char *mute[]          = { "lmc", "mute", NULL };
 static const char *vdown[]         = { "lmc", "down", "5", NULL };
@@ -248,6 +248,7 @@ static Button buttons[] = {
 	{ ClkStatusText,        0,              Button5,        spawn,		{.v = vdown} },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
+	{ ClkClientWin,         MODKEY|ShiftMask,Button1,        resizemouse,    {0} },
 	{ ClkTagBar,            0,              Button1,        view,           {0} },
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
