@@ -13,8 +13,8 @@ static const char dmenufont[]       = "DejaVu Sans Mono:style=Regular:size=10";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] =	  { UNSELECTED, background, foreground },
-	[SchemeSel]  =	  { SELECTED, background,  black1 }
+	[SchemeNorm] =	  { UNSELECTED, background, UNFOCUSED },
+	[SchemeSel]  =	  { SELECTED, background,  FOCUSED }
 };
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
