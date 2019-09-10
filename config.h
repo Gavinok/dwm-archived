@@ -101,6 +101,7 @@ static const char *browser[]       = { "/bin/sh", "-c", "ducksearch \"google-chr
 static const char *clip[]          = { "clipmenu", NULL };
 static const char *plumb[]         = { "cabl", "-c", NULL };
 static const char *killit[]        = { "dmenu-killall", NULL };
+static const char *dmath[]        = { "dmenumath", NULL };
 static const char *power[]         = { "power_menu.sh", NULL };
 static const char *filemanager[]   = { "dmenu-open.sh", NULL };
 static const char *screenshot[]    = { "windowshot.sh", NULL };
@@ -202,7 +203,8 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,                         XK_b,         togglebar,      {0} },
 	{ MODKEY,                                     XK_n,         spawn,          {.v = rss } },
 	{ MODKEY|ShiftMask,                           XK_n,         spawn,          {.v = reddit } },
-	{ MODKEY,                                     XK_m,         spawn,          {.v = mute } },
+	{ MODKEY,                                     XK_m,         spawn,          {.v = dmath } },
+	{ MODKEY|ShiftMask,                                     XK_m,         spawn,          {.v = mute } },
 	{ MODKEY,                                     XK_comma,     focusmon,       {.i = -1 } },
 	{ MODKEY|ShiftMask,                           XK_comma,     tagmon,         {.i = -1 } },
 	{ MODKEY,                                     XK_period,    focusmon,       {.i = +1 } },
