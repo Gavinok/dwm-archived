@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int gappx     = 15; /* gaps between windows */
+static const unsigned int gappx     = 10; /* gaps between windows */
 static const unsigned int deltamv   = 20; /* deltamvmv = the amount of pixels each movement will be by */
 static const unsigned int snap      = 32; /* snap pixel */
 static const int showbar            = 1;  /* 0 means no bar */
