@@ -6,7 +6,7 @@ static const unsigned int deltamv   = 20; /* deltamvmv = the amount of pixels ea
 static const unsigned int snap      = 32; /* snap pixel */
 static const int showbar            = 1;  /* 0 means no bar */
 static const int topbar             = 1;  /* 0 means bottom bar */
-static const char *fonts[]          = { "DejaVu Sans Mono:style=Regular:size=10" };
+static const char *fonts[]          = { "DejaVu Sans Mono:style=Regular:size=10"};
 static const char dmenufont[]       = "DejaVu Sans Mono:style=Regular:size=10";
 
 #include "../colorschemes/dwm/current.h"
@@ -23,22 +23,24 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "home", "foo", "bar", "news"};
+// static const char *tags[] = { "home", "foo", "bar", "news"};
+static const char *tags[] = { "why", "yap", "jig", "hoe", "non" };
 
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class  instance  title  tags mask isfloating monitor */
-	{ NULL, NULL,      "newspod",     1<<3, 0, -1 },
-	{ NULL, "mp3",     NULL,          1<<3, 1, -1 },
-	{ NULL, NULL,      "launch_once", 0,    1, -1 },
-	{ NULL, NULL,      "fuzzpass",    0,    1, -1 },
-	{ NULL, "popup",   NULL,          0,    1, -1 },
-	{ NULL, "float",   NULL,          0,    1, -1 },
-	{ NULL, NULL,      "float",       0,    1, -1 },
-	{ NULL, "lazarus", NULL,          1<<2,    1, -1 },
+	/* class  instance  title  tags mask  isfloating monitor */
+	{ NULL, NULL,      "newspod",     1<<4,	     0, -1 },
+	{ NULL, "mp3",     NULL,          1<<4,      1, -1 },
+	{ NULL, NULL,      "launch_once", 0,         1, -1 },
+	{ NULL, NULL,      "fuzzpass",    0,         1, -1 },
+	{ NULL, "popup",   NULL,          0,         1, -1 },
+	{ NULL, "float",   NULL,          0,         1, -1 },
+	{ NULL, NULL,      "float",       0,         1, -1 },
+	{ NULL, "lazarus", NULL,          1<<2,	     1, -1 },
+	{ NULL, NULL, "Firefox",          0,	     0, -1 },
 };
 
 /* layout(s) */
@@ -129,12 +131,12 @@ static Key keys[] = {
 	TAGKEYS(                        	XK_2, 1)
 	TAGKEYS(                        	XK_3, 2)
 	TAGKEYS(                        	XK_4, 3)
-	// TAGKEYS(                     	   XK_5,                      4)
-	// TAGKEYS(                     	   XK_6,                      0)
-	TAGKEYS(                        	XK_7, 0)
-	TAGKEYS(                        	XK_8, 1)
-	TAGKEYS(                        	XK_9, 2)
-	TAGKEYS(                        	XK_0, 3)
+	TAGKEYS(				XK_5, 4)
+	TAGKEYS(				XK_6, 0)
+	TAGKEYS(                        	XK_7, 1)
+	TAGKEYS(                        	XK_8, 2)
+	TAGKEYS(                        	XK_9, 3)
+	TAGKEYS(                        	XK_0, 4)
 	{ MODKEY,                                     XK_minus,     view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,                           XK_minus,     tag,            {.ui = ~0 } },
 	{ MODKEY,                                     XK_equal,     spawn,          {.v = nm } },
@@ -222,8 +224,8 @@ static Key keys[] = {
 	{ 0,                                          0x1008ff12,   spawn,          {.v = mute } },
 	{ 0,                                          0x1008ff74,   spawn,          {.v = rotate } },
 	{ 0,                                          0x1008ff7f,   spawn,          {.v = rotate } },
-	{ MODKEY,                                     XK_5,         view,           {0} },
-	{ MODKEY,                                     XK_6,         cyclelayout,    {.i = +1} },
+	// { MODKEY,                                     XK_5,         view,           {0} },
+	// { MODKEY,                                     XK_6,         cyclelayout,    {.i = +1} },
 	{ MODKEY,                                     0x1008ff27,   spawn,          {.v = mnext }},
 	{ MODKEY,                                     0x1008ff26,   spawn,          {.v = mprev }},
 };
