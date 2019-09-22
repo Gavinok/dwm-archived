@@ -1,6 +1,8 @@
 // TODO
 // add support for snapping 
 //
+/* #define MULTIMONITOR */
+#include "mv_adjacent_tag.c"
 void
 movestack(const Arg *arg) {
 	Client *c = NULL, *p = NULL, *pc = NULL, *i;
@@ -64,6 +66,8 @@ mv(const Arg *arg)
 		setfullscreen(c, 0);	
 	if ((axis == 1) || (axis == -1)) {
 		if(!c->isfloating && (selmon->lt[selmon->sellt]->arrange)){
+		    if (!selmon->sel || !mons->next)
+		    	wintotag(arg);
 		    tagmon(arg);
 		    return;
 		}
