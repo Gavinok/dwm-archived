@@ -44,7 +44,7 @@
 #include "drw.h"
 #include "util.h"
 
-#define CENTERWINDOWNAME
+/* #define CENTERWINDOWNAME */
 
 /* macros */
 #define BUTTONMASK              (ButtonPressMask|ButtonReleaseMask)
