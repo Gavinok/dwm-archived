@@ -127,16 +127,16 @@ static Key keys[] = {
 
 	{ MODKEY,                                     XK_grave,     view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,                           XK_grave,     tag,            {.ui = ~0 } },
-	TAGKEYS(				XK_1, 0)
-	TAGKEYS(                        	XK_2, 1)
-	TAGKEYS(                        	XK_3, 2)
-	TAGKEYS(                        	XK_4, 3)
-	TAGKEYS(				XK_5, 4)
-	TAGKEYS(				XK_6, 0)
-	TAGKEYS(                        	XK_7, 1)
-	TAGKEYS(                        	XK_8, 2)
-	TAGKEYS(                        	XK_9, 3)
-	TAGKEYS(                        	XK_0, 4)
+	TAGKEYS( XK_1, 0)
+	TAGKEYS( XK_2, 1)
+	TAGKEYS( XK_3, 2)
+	TAGKEYS( XK_4, 3)
+	TAGKEYS( XK_5, 4)
+	TAGKEYS( XK_6, 0)
+	TAGKEYS( XK_7, 1)
+	TAGKEYS( XK_8, 2)
+	TAGKEYS( XK_9, 3)
+	TAGKEYS( XK_0, 4)
 	{ MODKEY,                                     XK_minus,     view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,                           XK_minus,     tag,            {.ui = ~0 } },
 	{ MODKEY,                                     XK_equal,     spawn,          {.v = nm } },
