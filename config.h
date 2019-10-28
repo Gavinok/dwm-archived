@@ -77,7 +77,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *termcmd[]        = { "st", "-e", "tmux", NULL };
+static const char *termcmd[]       = { "st", NULL };
 static const char *dmenucmd[]	   = { "dmenu_run", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-n", "float", "-g", "90x24", "-e", "tmux", NULL };
@@ -140,14 +140,14 @@ static Key keys[] = {
 	{ MODKEY,                                     XK_minus,     view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,                           XK_minus,     tag,            {.ui = ~0 } },
 	{ MODKEY,                                     XK_equal,     spawn,          {.v = nm } },
-	{ MODKEY,				      XK_BackSpace, killclient,     {0} },
+	{ MODKEY,									XK_BackSpace, killclient,		{0} },
 
 	{ MODKEY,                                     XK_Tab,       cyclelayout,    {.i = +1} },
 	// { MODKEY|ShiftMask,                           XK_Tab,       cyclelayout,    {.i = -1} },
 	{ MODKEY,                                     XK_q,         killclient,     {0} },
 	{ AltMask|ControlMask,                        XK_q,         spawn,          {.v = killit } },
 	// { MODKEY|ShiftMask,    XK_q,            forcekill,      {0} },
-{ MODKEY|ShiftMask|ControlMask,                       XK_q,         quit,           {0} },
+	{ MODKEY|ShiftMask|ControlMask,               XK_q,         quit,           {0} },
 	{ MODKEY,                                     XK_w,         spawn,          {.v = search } },
 	{ MODKEY|ShiftMask,                           XK_w,         spawn,          {.v = browser } },
 	{ MODKEY,                                     XK_e,         spawn,          {.v = email } },
@@ -160,7 +160,6 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,                           XK_u,         spawn,          {.v = scratchpadcmd } },
 	{ MODKEY,                                     XK_i,         spawn,          {.v = sysmonitor2 } },
 	{ MODKEY|ShiftMask,                           XK_i,         spawn,          {.v = sysmonitor } },
-	{ MODKEY,                                     XK_o,         spawn,          {.v = vimclip } },
 	{ MODKEY,                                     XK_p,         spawn,          {.v = clip } },
 	{ MODKEY|ShiftMask,                           XK_p,         spawn,          {.v = plumb } },
 	{ MODKEY,				    XK_bracketleft, spawn,          {.v = hide } },
@@ -240,8 +239,8 @@ static Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {.v = &layouts[0]} },
 	{ ClkLtSymbol,          0,              Button2,        setlayout,      {.v = &layouts[2]} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[1]} },
-	{ ClkLtSymbol,		0,              Button4,        spawn,		{.v = lup} },
-	{ ClkLtSymbol,		0,              Button5,        spawn,		{.v = ldown} },
+	{ ClkLtSymbol,			0,              Button4,        spawn,		{.v = lup} },
+	{ ClkLtSymbol,			0,              Button5,        spawn,		{.v = ldown} },
 	{ ClkWinTitle,          0,              Button1,        max,		{0} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
 	{ ClkWinTitle,          0,              Button3,        killclient,     {0} },
