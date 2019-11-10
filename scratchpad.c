@@ -1,6 +1,13 @@
 static unsigned int scratchtag = 1 << LENGTH(tags);
 
 void
+hidescratch()
+{
+	unsigned int newtagset = selmon->tagset[selmon->seltags] & ~(scratchtag);
+	selmon->tagset[selmon->seltags] = newtagset;
+}
+
+void
 togglescratch(const Arg *arg)
 {
 	Client *c;
