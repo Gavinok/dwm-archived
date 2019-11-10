@@ -78,6 +78,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *termcmd[]       = { "st", NULL };
+static const char *emacs[]       = { "emacs", NULL };
 static const char *dmenucmd[]	   = { "dmenu_run", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-n", "float", "-g", "90x24", "-e", "tmux", NULL };
@@ -194,6 +195,7 @@ static Key keys[] = {
 	// { MODKEY,				      XK_apostrophe,   spawn,   {.v = hide} },
 	// { MODKEY|ShiftMask,			      XK_apostrophe,   spawn,   {.v = unhide} },
 	{ MODKEY,                                     XK_Return,    spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,                            XK_Return,    spawn,          {.v = emacs } },
 
 	{ MODKEY|ShiftMask,                           XK_z,         togglefloating, {0} },
 	{ MODKEY,                                     XK_z,         moveplace,      {.ui = WIN_SW }},
