@@ -66,8 +66,8 @@ mv(const Arg *arg)
 		setfullscreen(c, 0);	
 	if ((axis == 1) || (axis == -1)) {
 		if(!c->isfloating && (selmon->lt[selmon->sellt]->arrange)){
-		    if (!selmon->sel || !mons->next)
-		    	wintotag(arg);
+		    if (!selmon->sel || !mons->next) /* if only none monitor */
+		    	wintotag(arg); /* switch workspaces instead of monitors */
 		    tagmon(arg);
 		    return;
 		}
