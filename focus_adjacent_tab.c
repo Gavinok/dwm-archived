@@ -1,8 +1,6 @@
 void
 viewtoleft(const Arg *arg) {
 
-	/* hidescratch(); */
-
 	if(__builtin_popcount(selmon->tagset[selmon->seltags] & TAGMASK) == 1 /* if one tag is focused */
 	&& selmon->tagset[selmon->seltags] > 1) {
 		selmon->seltags ^= 1; /* toggle sel tagset */
