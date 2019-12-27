@@ -191,13 +191,13 @@ static Key keys[] = {
 	{ MODKEY,                       XK_k,                  focusstack,           {.i  =       -1               } },
 	{ MODKEY|ControlMask,           XK_k,                  spawn,                {.v  =       lup              } },
 	{ MODKEY|ShiftMask,             XK_k,                  mv,                   {.i  =       +2}              },
-	// { MODKEY,                                     XK_l,         focusmon,       {.i = +1 } },
+	 /* { MODKEY,                                     XK_l,         focusmon,       {.i = +1 } }, */
 	{ MODKEY,                       XK_l,                  viewtoright,          {.i  =       +1               } },
 	{ MODKEY|ControlMask,           XK_l,                  setmfact,             {.f  =       +0.05}           },
 	{ MODKEY|ShiftMask,             XK_l,                  mv,                   {.i  =       -1}              },
 	{ MODKEY,                       XK_semicolon,          view,                 {0}  },
 	{ MODKEY,				      XK_apostrophe,   spawn,   {.v = scratchpadcmd} },
-	// { MODKEY|ShiftMask,			      XK_apostrophe,   spawn,   {.v = unhide} },
+	 /* { MODKEY|ShiftMask,			      XK_apostrophe,   spawn,   {.v = unhide} }, */
 	{ MODKEY,                       XK_Return,             spawn,                {.v  =       termcmd          } },
 
 	{ MODKEY|ShiftMask,             XK_z,                  togglefloating,       {0}  },
@@ -207,7 +207,7 @@ static Key keys[] = {
 	/* { MODKEY,                    XK_c,         spawn,          {.v = calc } }, */
 	/* { MODKEY|ShiftMask,             XK_c,                  killclient,           {0}  }, */
 	{ MODKEY,                       XK_v,                  zoom,                 {0}  },
-	// { MODKEY,              XK_v,            zoomswap,       {0} },
+	/* { MODKEY,              XK_v,            zoomswap,       {0} }, */
 	{ MODKEY,                       XK_b,                  moveplace,            {.ui =       WIN_SE           }},
 	{ MODKEY|ControlMask,           XK_b,                  togglebar,            {0}  },
 	{ MODKEY,                       XK_n,                  spawn,                {.v  =       rss              } },
@@ -226,15 +226,15 @@ static Key keys[] = {
 	{ 0,                            XK_Print,              spawn,                {.v  =       screenshot       }},
 	{ MODKEY,                       XK_Print,              spawn,                {.v  =       windowshot		}},
 	{ ShiftMask,                    XK_Print,              spawn,                {.v  =       rootshot       }},
-	// { 0,                                          0x1008ff41,   spawn,          SHCMD("xset dpms force off")},
+	 /* { 0,                                          0x1008ff41,   spawn,          SHCMD("xset dpms force off")}, */
 	{ 0,                            0x1008ff41,            spawn,                SHCMD("systemctl suspend")},
 	{ 0,                            0x1008ff11,            spawn,                {.v  =       vdown            } },
 	{ 0,                            0x1008ff13,            spawn,                {.v  =       vup              } },
 	{ 0,                            0x1008ff12,            spawn,                {.v  =       mute             } },
 	{ 0,                            0x1008ff74,            spawn,                {.v  =       rotate           } },
 	{ 0,                            0x1008ff7f,            spawn,                {.v  =       rotate           } },
-	// { MODKEY,                                     XK_5,         view,           {0} },
-	// { MODKEY,                                     XK_6,         cyclelayout,    {.i = +1} },
+	 /* { MODKEY,                                     XK_5,         view,           {0} }, */
+	 /* { MODKEY,                                     XK_6,         cyclelayout,    {.i = +1} }, */
 	{ MODKEY,                       0x1008ff27,            spawn,                {.v  =       mnext            }},
 	{ MODKEY,                       0x1008ff26,            spawn,                {.v  =       mprev            }},
 };
@@ -256,7 +256,7 @@ static Button buttons[] = {
 	{ ClkWinTitle,          0,              Button5,        focusstack,     {.i = +1} },
 	/* { ClkWinTitle,    		0,				Button6,           setmfact,       {.f  = -0.05}}, */
 	/* { ClkWinTitle,          0, 				Button7,           setmfact,       {.f  = -0.05}}, */
-	// { ClkStatusText,        0,              Button1,        tagmon,         {.i = +1 } },
+	/* { ClkStatusText,        0,              Button1,        tagmon,         {.i = +1 } }, */
 	{ ClkStatusText,        0,              Button1,        spawn,          {.v = barmenu } },
 	{ ClkStatusText,        0,              Button2,        togglefloating, {.v = termcmd } },
 	{ ClkStatusText,        0,              Button3,        spawn,          {.v = barmenu } },
