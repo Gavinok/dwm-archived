@@ -56,6 +56,7 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 #include "moveplace.c"
 #include "mv.c"
 #include "focus_adjacent_tab.c"
+#include "focusmv.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
@@ -183,7 +184,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_g,                  moveplace,            {.ui =       WIN_C            }},
 	{ MODKEY|ControlMask,           XK_h,                  setmfact,             {.f  =       -0.05}           },
 	// { MODKEY,                                     XK_h,         focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_h,                  viewtoleft,           {.i  =       -1               } },
+	/* { MODKEY,                       XK_h,                  viewtoleft,           {.i  =       -1               } }, */
+	{ MODKEY,                       XK_h,                  focusmv,           {.i  =       -1               } },
 	{ MODKEY|ShiftMask,             XK_h,                  mv,                   {.i  =       +1}              },
 	{ MODKEY,                       XK_j,                  focusstack,           {.i  =       +1               } },
 	{ MODKEY|ControlMask,           XK_j,                  spawn,                {.v  =       ldown            } },
@@ -192,7 +194,8 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_k,                  spawn,                {.v  =       lup              } },
 	{ MODKEY|ShiftMask,             XK_k,                  mv,                   {.i  =       +2}              },
 	 /* { MODKEY,                                     XK_l,         focusmon,       {.i = +1 } }, */
-	{ MODKEY,                       XK_l,                  viewtoright,          {.i  =       +1               } },
+	/* { MODKEY,                       XK_l,                  viewtoright,          {.i  =       +1               } }, */
+	{ MODKEY,                       XK_l,                  focusmv,          {.i  =       +1               } },
 	{ MODKEY|ControlMask,           XK_l,                  setmfact,             {.f  =       +0.05}           },
 	{ MODKEY|ShiftMask,             XK_l,                  mv,                   {.i  =       -1}              },
 	{ MODKEY,                       XK_semicolon,          view,                 {0}  },
