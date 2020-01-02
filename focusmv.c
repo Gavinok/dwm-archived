@@ -6,19 +6,20 @@
 
 // +1=right
 // -1=left
-	void
+
+#include "focus_adjacent_tab.c"
+void
 focusmv(const Arg *arg) 
 {
-	Monitor *m;
 	int axis = arg->i;
-	if (mons->next || ((m = dirtomon(arg->i)) == selmon)){ /* if only one monitor */
+	if (mons->next){ /* if only one monitor */
 		focusmon(arg); /* switch workspaces instead of monitors */
 		return;
 	}
-	if (axis == 1)
+	if (axis == 1){
 		viewtoright(arg);
-	else
+	}else{
 		viewtoleft(arg);
-	return;
+	}
 }
 
