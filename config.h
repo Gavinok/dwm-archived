@@ -67,8 +67,8 @@ static const Layout layouts[] = {
 #include "cyclelayout.c"
 
 /* key definitions */
+#define MODKEY Mod4Mask
 /* #define MODKEY Mod4Mask */
-#define MODKEY Mod1Mask
 #define AltMask Mod1Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
