@@ -55,7 +55,6 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 #include "maximize.c"
 #include "moveplace.c"
 #include "mv.c"
-#include "focus_adjacent_tab.c"
 #include "focusmv.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
