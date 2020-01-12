@@ -23,7 +23,6 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-/* static const char *tags[] = { "TERM", "BROWSER"}; */
 static const char *tags[] = { "why", "yap", "jig", "hoe", "non" };
 
 #include "i3scratch.c"
@@ -85,7 +84,8 @@ static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-n", "float", "-g", "90x24", NULL };
-static const char *calc[]          = { "st", "-t", scratchpadname, "-e", "R", NULL };
+/* static const char *calc[]          = { "st", "-t", scratchpadname, "-f", "Source Code Pro-15", "-e", "R", NULL }; */
+static const char *calc[]          = { "roficalc.sh", NULL };
 static const char term[]           = { "st"};
 static const char exec[]           = { "-e" };
 static const char *email[]         = { term, "-t", "neomutt", exec, "launch_once.sh", "neomutt", NULL };
@@ -162,13 +162,13 @@ static Key keys[] = {
 	{ MODKEY,                       XK_y,                  spawn,                {.v  =       mixer            } },
 	{ MODKEY,                       XK_u,                  scratchpad_show,      {0}  },
 	{ MODKEY|ShiftMask,             XK_u,                  scratchpad_hide,      {0}  },
-	{ MODKEY|ControlMask,           XK_u,                  scratchpad_remove,{0} },
+	{ MODKEY|ControlMask,           XK_u,                  scratchpad_remove, 	 {0}  },
 	{ MODKEY,                       XK_i,                  spawn,                {.v  =       sysmonitor2      } },
 	{ MODKEY|ShiftMask,             XK_i,                  spawn,                {.v  =       sysmonitor       } },
 	{ MODKEY,                       XK_p,                  spawn,                {.v  =       clip             } },
 	{ MODKEY|ShiftMask,             XK_p,                  spawn,                {.v  =       plumb            } },
 	{ MODKEY,                       XK_bracketleft,        spawn,                {.v  =       hide             } },
-	{ MODKEY,                       XK_bracketright,spawn, {.v                   =    unhide} },
+	{ MODKEY,                       XK_bracketright, 	   spawn, 				 {.v  =       unhide 		   } },
 	{ MODKEY,                       XK_backslash,          spawn,                {.v  =       kdeconnect       } },
 	{ MODKEY,                       XK_a,                  incnmaster,           {.i  =       +1               } },
 	{ MODKEY|ControlMask,           XK_a,                  spawn,                {.v  =       vdown            } },
@@ -206,7 +206,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_z,                  moveplace,            {.ui =       WIN_SW           }},
 	/* { MODKEY,                       XK_x,                  spawn,                {.v  =       vimclip          } }, */
 	{ MODKEY|ShiftMask,             XK_x,                  spawn,                {.v  =       power            } },
-	/* { MODKEY,                    XK_c,         spawn,          {.v = calc } }, */
+	{ MODKEY,                    XK_c,         spawn,          {.v = calc } },
 	/* { MODKEY|ShiftMask,             XK_c,                  killclient,           {0}  }, */
 	{ MODKEY,                       XK_v,                  zoom,                 {0}  },
 	/* { MODKEY,              XK_v,            zoomswap,       {0} }, */
