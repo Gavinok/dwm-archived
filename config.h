@@ -239,6 +239,7 @@ static Key keys[] = {
 	 /* { MODKEY,                                     XK_6,         cyclelayout,    {.i = +1} }, */
 	{ MODKEY,                       0x1008ff27,            spawn,                {.v  =       mnext            }},
 	{ MODKEY,                       0x1008ff26,            spawn,                {.v  =       mprev            }},
+	{ 0,                       XK_Menu,            spawn,              SHCMD("")},
 };
 
 
